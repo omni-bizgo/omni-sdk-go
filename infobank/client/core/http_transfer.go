@@ -63,7 +63,6 @@ func (c *HttpClient) Request(method string, url string, header map[string]string
 		} else {
 			if _, exists := apiHttpStatusCode[response.StatusCode]; !exists {
 				err = errors.New(fmt.Sprintf("httpStatusCode := %d, msg := %s", response.StatusCode, response.Status))
-				errors.Join()
 				return nil, &err
 			}
 
